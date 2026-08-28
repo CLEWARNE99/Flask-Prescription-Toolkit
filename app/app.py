@@ -134,4 +134,4 @@ def mf_to_sv():
                            invalid_entry=invalid_entry)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
