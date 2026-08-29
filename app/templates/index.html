@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,63 +55,4 @@
         </div>
 
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-</head>
-<body>
-    {% macro navigation_bar() -%}
-    <div class="navbar navbar-expand-lg bg-primary center bottom-margin">
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item nav-space"><a class="nav-link active" href="/">Home</a></li>
-                    <li class="nav-item nav-space"><a class="nav-link active" href="/cyl_transpose">Cyl Transposition</a></li>
-                    <li class="nav-item nav-space"><a class="nav-link active" href="/power_at">Power At 90/180</a></li>
-                    <li class="nav-item nav-space"><a class="nav-link active" href="/mf_to_sv">Multifocal to Single Vision Conversion</a></li>
-                </ul>
-                </div>
-            </div>
-    </nav>
-        </div>
-    {%- endmacro %}
-    {{ navigation_bar() }}
-
-    <div class="container center bottom-margin-small">
-    <div class="page-header" id="banner">
-        <h1>👓 Eyeglass Rx Toolkit 👓</h1>
-    </div>
-    </div>
-    <main>
-        <div class="container center text-center bigger-text bottom-margin">
-            <p>Welcome to my Rx Conversion Toolkit! After many years working as an optician, I've spent lots of time
-            converting prescriptions and calculating lens powers in different meridians. That inspired me to come up
-            with a program that can do that work for me!</p>
-        </div>
-        <div class="container center bottom-margin">
-            <h2>What's included?</h2>
-        </div>
-
-        <div class="container center text-center">
-            <div class="side-margins">
-            <p class="bigger-text text-purp"><b>Cyl Transposition</b></p>
-            <p>Transpose a single vision prescription from plus cyl to minus cyl or vice versa.</p>
-                </div>
-            <div class="side-margins">
-            <p class="bigger-text text-purp"><b>Power at 90/180</b></p>
-            <p>Find the power of a single vision prescription at a specified meridian.</p>
-                </div>
-            <div class="side-margins">
-            <p class="bigger-text text-purp"><b>Multifocal to Single Vision</b></p>
-            <p>Convert a multifocal prescription into a single vision distance, intermediate, or reading prescription.</p>
-                </div>
-        </div>
-
-</body>
->>>>>>> fc25f871622db43c363b5748a77f54a75ba39ae8
 </html>
