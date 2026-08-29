@@ -1,4 +1,4 @@
-import format
+from core import format
 import math
 
 def power_at(entry_dict, meridian):
