@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <title>Power at 90/180</title>
@@ -94,4 +95,102 @@
         {% endif %}
         </div>
     </main>
+=======
+<head>
+    <meta charset="UTF-8">
+    <title>Power at 90/180</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+
+{% from 'index.html' import navigation_bar %}
+<body>
+    {{ navigation_bar() }}
+    <div class="container center bottom-margin-small">
+    <div class="page-header" id="banner">
+        <h1>Power @ 90/180</h1>
+    </div>
+    </div>
+    <main>
+        <div class="container center bottom-margin-small">
+        <form method="POST">
+        <table class="bottom-margin-small">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>(+/-)</th>
+                    <th class="text-center">SPH</th>
+                    <th>(+/-)</th>
+                    <th class="text-center">CYL</th>
+                    <th></th>
+                    <th class="text-center">AXIS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>OD</td>
+                    <td>
+                        <select name="od_sph_sign">
+                            <option value="" disabled></option>
+                            <option value="-">-</option>
+                            <option value="+">+</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="od_sph_val" required="required"/></td>
+                    <td><select name="od_cyl_sign">
+                            <option value="" disabled></option>
+                            <option value="-">-</option>
+                            <option value="+">+</option>
+                        </select></td>
+                    <td><input type="text" name="od_cyl_val" required="required"/></td>
+                    <td>@</td>
+                    <td><input type="text" name="od_axis" required="required"/></td>
+                </tr>
+                <tr>
+                    <td>OS</td>
+                    <td>
+                        <select name="os_sph_sign">
+                            <option value="" disabled></option>
+                            <option value="-">-</option>
+                            <option value="+">+</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="os_sph_val" required="required"/></td>
+                    <td><select name="os_cyl_sign">
+                            <option value="" disabled></option>
+                            <option value="-">-</option>
+                            <option value="+">+</option>
+                        </select></td>
+                    <td><input type="text" name="os_cyl_val" required="required"/></td>
+                    <td>@</td>
+                    <td><input type="text" name="os_axis" required="required"/></td>
+                </tr>
+            </tbody>
+        </table>
+            <div class="container center bottom-margin-small">
+                <button class="btn btn-primary rx-button" type="submit" name="power" value="90">Power @ 90</button>
+                <button class="btn btn-primary rx-button" type="submit" name="power" value="180">Power @ 180</button>
+            </div>
+        </form>
+        </div>
+
+        <div class="container text-center">
+        {% if power_result_od and power_result_os %}
+            <h1 class="text-purp">You entered:</h1>
+        <div class="bigger-text bottom-margin-small">
+            <p><b>{{original_rx_formatted_od}}</b></p>
+            <p><b>{{original_rx_formatted_os}}</b></p>
+        </div>
+            <h1 class="text-purp">The power at {{power_selected}}° is: </h1>
+        <div class="bigger-text">
+            <p><b>OD: {{power_result_od}}</b></p>
+            <p><b>OS: {{power_result_os}}</b></p>
+        </div>
+        {% elif invalid_entry %}
+        <div class="bigger-text">
+            <p>Invalid entry. Please try again.</p>
+        </div>
+        {% endif %}
+        </div>
+    </main>
+>>>>>>> fc25f871622db43c363b5748a77f54a75ba39ae8
 </body>
