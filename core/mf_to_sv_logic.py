@@ -1,4 +1,4 @@
-import format
+from core import format
 
 def mf_to_sv(entry_dict, convert_type):
     """
