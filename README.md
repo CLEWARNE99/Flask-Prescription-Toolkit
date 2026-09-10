@@ -28,6 +28,8 @@ tool is being used.
 
 I decided to separate the python logic into separate files for readability and organization. Rather than one big logic file that would be long and messy, these map nicely to each page of the app.
 
+For the CSS, I used Bootstrap, and made some small tweaks to adjust to my vision of the app.
+
 <img width="981" height="514" alt="Screenshot_10-9-2026_0262_flask-prescription-toolkit onrender com" src="https://github.com/user-attachments/assets/c77508be-4c47-459c-a8d1-37ebbbf182fe" />
 (A screenshot of the Cyl Transposition page!)
 
