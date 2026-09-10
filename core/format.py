@@ -58,6 +58,10 @@ def validate_entry(rx_dict, rx_type):
                     return False
                 if float(values_list[index]) % 1 != 0 or float(values_list[index]) < 1 or float(values_list[index]) > 180:
                     return False
+                try:
+                    int(values_list[index][0])
+                except ValueError:
+                    return False
             #Indices 1,3,6,8 (sph and cyl vals) should be a numerical float value ending in .00, .25, .50, or .75
             elif index in (1,3,6,8):
                 try:
@@ -65,6 +69,10 @@ def validate_entry(rx_dict, rx_type):
                 except ValueError:
                     return False
                 if (float(values_list[index]) * 100) % 100 != 0 and (float(values_list[index]) * 100) % 25 != 0 or float(values_list[index]) < 0:
+                    return False
+                try:
+                    int(values_list[index][0])
+                except ValueError:
                     return False
 
     #For multifocal rxs...
@@ -83,6 +91,11 @@ def validate_entry(rx_dict, rx_type):
                     return False
                 if float(values_list[index]) % 1 != 0 or float(values_list[index]) < 1 or float(values_list[index]) > 180:
                     return False
+                #Prevent + char from being accepted inside of number box
+                try:
+                    int(values_list[index][0])
+                except ValueError:
+                    return False
 
             #Indices 1,3,5,7,9,11 (sph, cyl, and add vals) should be a numerical float value ending in .00, .25, .50, or .75
             elif index in (1,3,5,7,9,11):
@@ -91,6 +104,10 @@ def validate_entry(rx_dict, rx_type):
                 except ValueError:
                     return False
                 if (float(values_list[index]) * 100) % 100 != 0 and (float(values_list[index]) * 100) % 25 != 0 or float(values_list[index]) < 0:
+                    return False
+                try:
+                    int(values_list[index][0])
+                except ValueError:
                     return False
     return True
 
@@ -168,4 +185,5 @@ def entry_consolidate(rx_dict, rx_type):
 
         #Increment count to add to list in index 1 of return list.
         count += 1
+
     return od_os_consolidated
